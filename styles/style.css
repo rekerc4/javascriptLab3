@@ -7,16 +7,21 @@ button{
     border: none; 
 }
 
+html, body{
+    min-height: 100%;
+    height: 100%; 
+}
+
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: url(../font/MaterialIcons-Regular.eot); /* For IE6-8 */
     src: local('Material Icons'),
       local('MaterialIcons-Regular'),
-      url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
-      url(fonts/MaterialIcons-Regular.woff) format('woff'),
-      url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+      url(../font/MaterialIcons-Regular.woff2) format('woff2'),
+      url(../font/MaterialIcons-Regular.woff) format('woff'),
+      url(../font/MaterialIcons-Regular.ttf) format('truetype');
   }
 
   @font-face {
@@ -61,8 +66,27 @@ button{
   }
 
   .container{
-      background-image: url(images/addressbg.jpg); 
+    height: 100%; 
+  }
+
+  .background{
+      width: 105%;
+      height: 105%; 
+      position: absolute; 
+      background-image: url(../images/addressbg.jpg); 
       background-repeat: repeat;
+      background-size: cover;
+      top: -5px;
+      z-index: -2;
+  }
+
+  .mask{
+      height: 105%; 
+      background: rgba(0,0,0,0.6);
+      position: absolute; 
+      width: 105%;
+      top: -5px;
+      z-index: -2;
   }
 
   .content{
@@ -76,11 +100,14 @@ button{
       text-align: center;
       color: white; 
       margin-bottom: 30px; 
+      padding-top: 30px; 
   }
 
   .form{
       display: flex; 
       flex-flow: column; 
+      width: 92%; 
+      margin: 0 auto; 
   }
 
   .in{
