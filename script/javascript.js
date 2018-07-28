@@ -73,13 +73,6 @@ book.add(new Contact("Those", "those@co.uk", 4858339287, "those"));
 book.add(new Contact("Me", "me@whitehouse.gov", 5982671976, "me"));
 console.log(book); 
 
-book.deleteAt(1); 
-
-book.deleteByName("You");
-
-book.updateByName("Those", 586738475233, "those@those.io");
-
-
 let eithOr = (nOrIn) => {
     nOrIn = nOrIn.toLowerCase().trim(); 
     let sel = nOrIn.replace(/[\W0-9_]+/g, '').slice(0, 1); 
@@ -133,9 +126,9 @@ let tree = (p) => {
     }
 }
 
-let p = prompt("Add, Remove, Print, or Quit?");
+//let p = prompt("Add, Remove, Print, or Quit?");
 
-tree(p);
+//tree(p);
 
 
 
