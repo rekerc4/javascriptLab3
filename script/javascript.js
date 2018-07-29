@@ -4,8 +4,9 @@ class AddressBook {
     constructor(contact){
         this.contact = [];
         };
-    add(info){
+    add(info, callback){
         this.contact.splice(this.contact.length, 0, info);
+        callback();
     }
     deleteAt(index){
         let theIndex = parseInt(index);
@@ -129,6 +130,15 @@ book.add(new Contact("Me", "me@whitehouse.gov", 5982671976, "me"));
 
 //tree(p);
 
-
+function(num, n){
+    let d = num / n;
+    let ceiling = Math.ceil(d); 
+    if(d === ceiling){
+        return 0; 
+    }
+    else{
+        let whatever = ceiling - d; 
+    }
+}
 
 
