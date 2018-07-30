@@ -4,9 +4,10 @@ class AddressBook {
     constructor(contact){
         this.contact = [];
         };
-    add(info, callback){
+    add(info){
         this.contact.splice(this.contact.length, 0, info);
-        callback();
+        this.display(this.contact[this.contact.length - 1]); 
+        
     }
     deleteAt(index){
         let theIndex = parseInt(index);
@@ -54,6 +55,70 @@ class AddressBook {
             }
         }
     }
+    display(newE){
+        console.log(this.contact.length)
+        console.log(newE); 
+        let email = newE.email; 
+        let name = newE.name;
+        let phone = newE.phone; 
+        let rel = newE.relation; 
+       
+        
+        let emDiv = document.createElement("div"); 
+        let nDiv = document.createElement("div");
+        let phDiv = document.createElement("div");
+        let relDiv = document.createElement("div");
+        let trDiv = document.createElement("div");
+        let icon = document.createElement("i")
+        
+        emDiv.classList.add("e");
+        nDiv.classList.add("n");
+        phDiv.classList.add("ph");
+        relDiv.classList.add("rel");
+        trDiv.classList.add("trash");
+        icon.classList.add("tbr");
+        icon.classList.add("material-icons");
+        
+        let nText = document.createTextNode(name); 
+        let emText = document.createTextNode(email);
+        let phText = document.createTextNode(phone);
+        let relText = document.createTextNode(rel);
+        let trTextNode = document.createTextNode("delete");
+        
+        nDiv.appendChild(nText);
+        emDiv.appendChild(emText);
+        phDiv.appendChild(phText);
+        relDiv.appendChild(relText);
+        icon.appendChild(trTextNode);
+
+
+        let disContact = document.createElement("section");
+        disContact.classList.add("contact");
+        document.getElementById("cont-list").appendChild(disContact);
+        disContact.appendChild(nDiv);
+        disContact.appendChild(emDiv);
+        disContact.appendChild(phDiv);
+        disContact.appendChild(relDiv);
+        disContact.appendChild(icon);
+
+        icon.addEventListener("click", function(){
+            let inter = setInterval(function(){
+                if (!disContact.style.opacity){
+                    disContact.style.opacity = 1; 
+                }
+                if(disContact.style.opacity > 0){
+                    disContact.style.opacity -= 0.1; 
+                }
+                else{
+                    disContact.parentNode.removeChild(disContact);
+                    clearInterval(inter)
+                }
+            }, 100);
+            inter();
+           
+        });
+
+    }
 }
 
 class Contact { 
@@ -67,11 +132,20 @@ class Contact {
 
 const book = new AddressBook();
 
-book.add(new Contact("You", "you@you.org", 2345679876, "you")); 
-book.add(new Contact("Them", "them@them.net", 9195853952, "them")); 
-book.add(new Contact("They", "they@they.biz", 9883929476, "they")); 
-book.add(new Contact("Those", "those@co.uk", 4858339287, "those"));
-book.add(new Contact("Me", "me@whitehouse.gov", 5982671976, "me"));
+book.add(new Contact("Megan", "megan@grandcircus.co", "111-222-3333", "friend")); 
+book.add(new Contact("Julie", "julie@grandcircus.co", "111-222-3333", "coworker")); 
+book.add(new Contact("Jon", "jon@grandcircus.co", "111-222-3333", "coworker")); 
+
+
+document.getElementById('form').addEventListener("submit", function(event){
+    let name = document.getElementById("name").value; 
+    let email = document.getElementById("email").value; 
+    let phone = document.getElementById("phone").value; 
+    let rel = document.getElementById("relation").value; 
+    book.add(new Contact(name, email, phone, rel));
+});
+
+
 
 // let eithOr = (nOrIn) => {
 //     nOrIn = nOrIn.toLowerCase().trim(); 
@@ -126,19 +200,19 @@ book.add(new Contact("Me", "me@whitehouse.gov", 5982671976, "me"));
 //     }
 // }
 
-//let p = prompt("Add, Remove, Print, or Quit?");
+// let p = prompt("Add, Remove, Print, or Quit?");
 
-//tree(p);
+// tree(p);
 
-function(num, n){
-    let d = num / n;
-    let ceiling = Math.ceil(d); 
-    if(d === ceiling){
-        return 0; 
-    }
-    else{
-        let whatever = ceiling - d; 
-    }
-}
+// function(num, n){
+//     let d = num / n;
+//     let ceiling = Math.ceil(d); 
+//     if(d === ceiling){
+//         return 0; 
+//     }
+//     else{
+//         let whatever = ceiling - d; 
+//     }
+// }
 
 

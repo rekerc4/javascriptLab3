@@ -16,7 +16,7 @@
         <div class="mask" id="mask"></div>
         <section class="content" id="content">
             <h1 class="title" id="title">My Contacts</h1>
-            <form class="form" id="form">
+            <form class="form" id="form" onsubmit="return false">
                 <input name="name" placeholder="Name" class="in name" id="name">
                 <input name="email" placeholder="Email" class="in email" id="email">
                 <input name="phone" placeholder="Phone" class="in phone" id="phone">
@@ -25,53 +25,13 @@
                     <option value="friend">Friend</option>
                     <option value="business">Business</option>
                     <option value="personal">Personal</option>
+                    <option value="coworker">Coworker</option>
                 </select>
-                <button name="add" type="submit" value="Submit" class="in btn" id="btn">Add</button>
+                <button type="submit" value="Submit" name="add" class="in btn" id="btn">Add</button>
             </form>
         </section>
         <section class="cont-list" id="cont-list">
-            <section class="contact" id="contact">
-                <div class="n" id="n"><p>Name: Jennifer Secunda</p></div>
-                <div class="e" id="e">jsecunda@yoiu.net</div>
-                <div class="ph" id="ph">287-908-1239</div>
-                <div class="rel" id="rel">Friend</div>
-                <div class="trash" id="trash"><i class="tbr material-icons">delete</i></div> 
-            </section>
-            <section class="contact" id="contact">
-                    <div class="n" id="n"><p>Name: Jennifer Secunda</p></div>
-                    <div class="e" id="e">jsecunda@yoiu.net</div>
-                    <div class="ph" id="ph">287-908-1239</div>
-                    <div class="rel" id="rel">Friend</div>
-                    <div class="trash" id="trash"><i class="tbr material-icons">delete</i></div>
-            </section>
-            <section class="contact" id="contact">
-                    <div class="n" id="n"><p>Name: Jennifer Secunda</p></div>
-                    <div class="e" id="e">jsecunda@yoiu.net</div>
-                    <div class="ph" id="ph">287-908-1239</div>
-                    <div class="rel" id="rel">Relation: Friend</div>
-                    <div class="trash" id="trash"><i class="tbr material-icons">delete</i></div>
-            </section>
-            <section class="contact" id="contact">
-                <div class="n" id="n"><p>Name: Jennifer Secunda</p></div>
-                <div class="e" id="e">jsecunda@yoiu.net</div>
-                <div class="ph" id="ph">287-908-1239</div>
-                <div class="rel" id="rel">Friend</div>
-                <div class="trash" id="trash"><i class="tbr material-icons">delete</i></div> 
-            </section>
-            <section class="contact" id="contact">
-                    <div class="n" id="n"><p>Name: Jennifer Secunda</p></div>
-                    <div class="e" id="e">jsecunda@yoiu.net</div>
-                    <div class="ph" id="ph">287-908-1239</div>
-                    <div class="rel" id="rel">Friend</div>
-                    <div class="trash" id="trash"><i class="tbr material-icons">delete</i></div>
-            </section>
-            <section class="contact" id="contact">
-                    <div class="n" id="n"><p>Name: Jennifer Secunda</p></div>
-                    <div class="e" id="e">jsecunda@yoiu.net</div>
-                    <div class="ph" id="ph">287-908-1239</div>
-                    <div class="rel" id="rel">Friend</div>
-                    <div class="trash" id="trash"><i class="tbr material-icons">delete</i></div>
-            </section>
+            
             
         </section>
     </section>
